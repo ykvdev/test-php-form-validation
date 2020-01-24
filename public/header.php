@@ -16,5 +16,5 @@
 <body>
 
 <div style="padding-bottom: 10px; border-bottom: 1px solid gray;">
-    <a href="/login.php">Login</a> | <a href="/register.php">Register</a> | <a href="/contact.php">Contact</a>
+    <a href="/index.php">Login</a> | <a href="/register.php">Register</a> | <a href="/contact.php">Contact</a>
 </div>

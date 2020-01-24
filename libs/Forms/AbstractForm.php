@@ -4,6 +4,7 @@ namespace libs\Forms;
 
 use libs\Forms\Validators\AbstractValidator;
 use libs\Forms\Validators\RepeatValidator;
+use libs\Forms\Validators\RequiredValidator;
 
 abstract class AbstractForm
 {
@@ -51,8 +52,12 @@ abstract class AbstractForm
     {
         if($validator instanceof RepeatValidator) {
             $result = $validator->validate($this->data[$fieldName], $this->data);
-        } else {
+        } elseif($validator instanceof RequiredValidator) {
             $result = $validator->validate($this->data[$fieldName]);
+        } else {
+            $result = !isset($this->data[$fieldName])
+                || empty($this->data[$fieldName])
+                || $validator->validate($this->data[$fieldName]);
         }
 
         if (!$result) {
