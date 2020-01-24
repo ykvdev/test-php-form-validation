@@ -2,10 +2,10 @@
 
 namespace libs\Forms\Validators;
 
-class EmailValidator extends AbstractValidator
+class RequiredValidator extends AbstractValidator
 {
     public function validate($value): bool
     {
-        return filter_var($value, FILTER_VALIDATE_EMAIL) !== false;
+        return (bool)$value;
     }
 }
