@@ -15,6 +15,8 @@ class LoginForm extends AbstractForm
                 RequiredValidator::make('E-mail is required'),
                 EmailValidator::make('E-mail is not correct'),
             ],
+
+            'password' => RequiredValidator::make('Password is required'),
         ];
     }
 }

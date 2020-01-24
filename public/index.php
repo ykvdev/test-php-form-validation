@@ -9,6 +9,7 @@ if(isset($_POST['email']) && !$loginForm->load($_POST)->validate()) {
 
 $fields = [
     'email' => ['text', 'E-mail'],
+    'password' => ['password', 'Password'],
 ];
 ?>
 
@@ -30,7 +31,7 @@ $fields = [
                 <?php foreach ($errors[$fieldName] as $error): ?>
                     <div style="color: darkred"><?= $error ?></div>
                 <?php endforeach; ?>
-            <?php else: ?>
+            <?php elseif(isset($_POST[$fieldName])): ?>
                 <div style="color: darkgreen">Correct</div>
             <?php endif; ?>
         </div>
