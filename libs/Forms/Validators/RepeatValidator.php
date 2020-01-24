@@ -2,10 +2,10 @@
 
 namespace libs\Forms\Validators;
 
-class RequiredValidator extends AbstractValidator
+class RepeatValidator extends AbstractValidator
 {
     public function validate($value, array $params = []): bool
     {
-        return (bool)$value;
+        return strcmp($value, $params[$this->options['original_field']] ?? null) === 0;
     }
 }

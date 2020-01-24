@@ -7,21 +7,21 @@ abstract class AbstractValidator
     /** @var string */
     private $errorMessage;
 
-    public static function make(string $errorMessage): self
-    {
-        $validator = new static();
-        $validator->setErrorMessage($errorMessage);
+    /** @var array */
+    protected $options;
 
-        return $validator;
+    public static function make(string $errorMessage, array $options = []): self
+    {
+        return new static($errorMessage, $options);
     }
 
-    /**
-     * @param string $errorMessage
-     */
-    public function setErrorMessage(string $errorMessage): void
+    public function __construct(string $errorMessage, array $options = [])
     {
         $this->errorMessage = $errorMessage;
+        $this->options = $options;
     }
+
+    abstract public function validate($value, array $params = []): bool;
 
     /**
      * @return string
@@ -30,6 +30,4 @@ abstract class AbstractValidator
     {
         return $this->errorMessage;
     }
-
-    abstract public function validate($value): bool;
 }

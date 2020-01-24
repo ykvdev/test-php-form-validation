@@ -3,6 +3,7 @@
 namespace libs\Forms;
 
 use libs\Forms\Validators\AbstractValidator;
+use libs\Forms\Validators\RepeatValidator;
 
 abstract class AbstractForm
 {
@@ -48,7 +49,13 @@ abstract class AbstractForm
 
     private function validateField(string $fieldName, AbstractValidator $validator): bool
     {
-        if (!$validator->validate($this->data[$fieldName])) {
+        if($validator instanceof RepeatValidator) {
+            $result = $validator->validate($this->data[$fieldName], $this->data);
+        } else {
+            $result = $validator->validate($this->data[$fieldName]);
+        }
+
+        if (!$result) {
             $this->errorMessages[$fieldName][] = $validator->getErrorMessage();
 
             return false;

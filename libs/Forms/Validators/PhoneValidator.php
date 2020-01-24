@@ -2,10 +2,10 @@
 
 namespace libs\Forms\Validators;
 
-class RequiredValidator extends AbstractValidator
+class PhoneValidator extends AbstractValidator
 {
     public function validate($value, array $params = []): bool
     {
-        return (bool)$value;
+        return (bool)preg_match('/^\+\d{10,15}$/', $value);
     }
 }
