@@ -4,6 +4,9 @@ namespace libs\Forms\Validators;
 
 class StringValidator extends AbstractValidator
 {
+    /**
+     * {@inheritDoc}
+     */
     public function validate($value, array $params = []): bool
     {
         $length = mb_strlen($value);

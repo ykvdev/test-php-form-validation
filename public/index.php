@@ -5,6 +5,8 @@ require __DIR__ . '/../app/init.php';
 $loginForm = new \app\forms\LoginForm();
 if(isset($_POST['email']) && !$loginForm->load($_POST)->validate()) {
     $errors = $loginForm->getErrorMessages();
+} else {
+    $errors = [];
 }
 
 $fields = [

@@ -13,24 +13,34 @@ abstract class AbstractForm
 
     /** @var array */
     private $errorMessages;
-    
+
+    /**
+     * @return array
+     */
     abstract protected function validators(): array;
 
+    /**
+     * @param array $data
+     * @param bool $strict
+     * @param bool $trimValues
+     * @return $this
+     */
     public function load(array $data, bool $strict = true, bool $trimValues = true): self
     {
-        foreach ($data as $field => &$value) {
-            $value = $trimValues ? trim($value) : $value;
-
+        foreach ($data as $field => $value) {
             if ($strict && !isset($this->validators()[$field])) {
                 throw new \RuntimeException("Validator for {$field} field not set");
             }
 
-            $this->data[$field] = $value;
+            $this->data[$field] = $trimValues ? trim($value) : $value;
         }
 
         return $this;
     }
 
+    /**
+     * @return bool
+     */
     public function validate(): bool
     {
         foreach ($this->validators() as $fieldName => $fieldValidators) {
@@ -48,6 +58,11 @@ abstract class AbstractForm
         return empty($this->errorMessages);
     }
 
+    /**
+     * @param string $fieldName
+     * @param AbstractValidator $validator
+     * @return bool
+     */
     private function validateField(string $fieldName, AbstractValidator $validator): bool
     {
         if($validator instanceof RepeatValidator) {
@@ -69,6 +84,9 @@ abstract class AbstractForm
         }
     }
 
+    /**
+     * @return array
+     */
     public function getErrorMessages(): array
     {
         return $this->errorMessages;

@@ -4,13 +4,15 @@ namespace app\forms;
 
 use libs\Forms\AbstractForm;
 use libs\Forms\Validators\EmailValidator;
-use libs\Forms\Validators\RepeatValidator;
 use libs\Forms\Validators\StringValidator;
 use libs\Forms\Validators\PhoneValidator;
 use libs\Forms\Validators\RequiredValidator;
 
 class ContactForm extends AbstractForm
 {
+    /**
+     * {@inheritDoc}
+     */
     protected function validators(): array
     {
         return [

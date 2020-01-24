@@ -5,6 +5,8 @@ require __DIR__ . '/../app/init.php';
 $contactForm = new \app\forms\ContactForm();
 if(isset($_POST['email']) && !$contactForm->load($_POST)->validate()) {
     $errors = $contactForm->getErrorMessages();
+} else {
+    $errors = [];
 }
 
 $fields = [

@@ -11,6 +11,9 @@ use libs\Forms\Validators\RequiredValidator;
 
 class RegisterForm extends AbstractForm
 {
+    /**
+     * {@inheritDoc}
+     */
     protected function validators(): array
     {
         return [

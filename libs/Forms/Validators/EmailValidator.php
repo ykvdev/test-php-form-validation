@@ -4,8 +4,11 @@ namespace libs\Forms\Validators;
 
 class EmailValidator extends AbstractValidator
 {
+    /**
+     * {@inheritDoc}
+     */
     public function validate($value, array $params = []): bool
     {
-        return filter_var($value, FILTER_VALIDATE_EMAIL) !== false;
+        return (bool)filter_var($value, FILTER_VALIDATE_EMAIL);
     }
 }

@@ -5,6 +5,8 @@ require __DIR__ . '/../app/init.php';
 $registerForm = new \app\forms\RegisterForm();
 if(isset($_POST['email']) && !$registerForm->load($_POST)->validate()) {
     $errors = $registerForm->getErrorMessages();
+} else {
+    $errors = [];
 }
 
 $fields = [

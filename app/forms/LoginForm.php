@@ -8,6 +8,9 @@ use libs\Forms\Validators\RequiredValidator;
 
 class LoginForm extends AbstractForm
 {
+    /**
+     * {@inheritDoc}
+     */
     protected function validators(): array
     {
         return [
