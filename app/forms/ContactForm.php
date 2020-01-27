@@ -3,10 +3,10 @@
 namespace app\forms;
 
 use libs\Forms\AbstractForm;
-use libs\Forms\Validators\EmailValidator;
-use libs\Forms\Validators\StringValidator;
-use libs\Forms\Validators\PhoneValidator;
-use libs\Forms\Validators\RequiredValidator;
+use libs\Validators\EmailValidator;
+use libs\Validators\StringValidator;
+use libs\Validators\PhoneValidator;
+use libs\Validators\RequiredValidator;
 
 class ContactForm extends AbstractForm
 {

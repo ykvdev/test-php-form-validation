@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace libs\Forms\Validators;
+namespace libs\Validators;
 
 abstract class AbstractValidator
 {

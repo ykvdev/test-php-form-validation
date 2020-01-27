@@ -2,9 +2,9 @@
 
 namespace libs\Forms;
 
-use libs\Forms\Validators\AbstractValidator;
-use libs\Forms\Validators\RepeatValidator;
-use libs\Forms\Validators\RequiredValidator;
+use libs\Validators\AbstractValidator;
+use libs\Validators\RepeatValidator;
+use libs\Validators\RequiredValidator;
 
 abstract class AbstractForm
 {

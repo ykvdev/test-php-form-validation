@@ -3,8 +3,8 @@
 namespace app\forms;
 
 use libs\Forms\AbstractForm;
-use libs\Forms\Validators\EmailValidator;
-use libs\Forms\Validators\RequiredValidator;
+use libs\Validators\EmailValidator;
+use libs\Validators\RequiredValidator;
 
 class LoginForm extends AbstractForm
 {
