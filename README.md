@@ -2,7 +2,7 @@
 
 ## Install and run
 
-1. Clone: `git clone https://bitbucket.org/atoumus/test_zakupka.com.git && cd ./test_zakupka.com`
+1. Clone: `git clone https://bitbucket.org/atoumus/test_zakupka_form_validation.git && cd ./test_zakupka_form_validation`
 1. Run: `php -S 0.0.0.0:8000 -t public`
 1. Go to browser: `http://{your-ip-address}:8000`
 
