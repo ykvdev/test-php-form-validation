@@ -1,8 +1,8 @@
-# Test task for zakupka.com
+# PHP Form Validation Test Task
 
 ## Install and run
 
-1. Clone: `git clone https://bitbucket.org/atoumus/test_zakupka_form_validation.git && cd ./test_zakupka_form_validation`
+1. Clone: `git clone https://bitbucket.org/atoumus/php_test_form_validation.git && cd ./php_test_form_validation`
 1. Run: `php -S 0.0.0.0:8000 -t public`
 1. Go to browser: `http://{your-ip-address}:8000`
 
@@ -18,8 +18,7 @@
 Некоторые объяснения по тому как делал:
 
 1. Правильно было бы сделать контроллеры и рендеринг видов, но этого в ТЗ не требовалось, 
-поэтому для упрощения сделал несколько PHP файлов: contact.php index.php register.php ... 
-(но так конечно в реальном проекте нельзя т.к. это хардкод).
+поэтому для упрощения сделал несколько PHP файлов: contact.php index.php register.php
 1. Если бы использовался composer, то автозагрузку классов можно было сделать через него. 
 Но в рамках данного тестового задания composer был бы излишним, 
 поэтому автозагрузку сделал через spl_autoload_register().
