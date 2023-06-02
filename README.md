@@ -2,7 +2,7 @@
 
 ## Install and run
 
-1. Clone: `git clone git@github.com:ykvdev/test-php-form-validation.git && cd ./test-php-form-validation`
+1. Clone: `git clone https://github.com/ykvdev/test-php-form-validation.git && cd ./test-php-form-validation`
 1. Run: `php -S 0.0.0.0:8000 -t public`
 1. Go to browser: `http://{your-ip-address}:8000`
 
